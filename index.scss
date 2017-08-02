@@ -1,0 +1,146 @@
+
+$font-stack: Helvetica, sans-serif;
+$light-green: #81c784; 
+$dark-green: #519657; 
+$dark-grey: #424242; 
+$dark-black: #1b1b1b; 
+$dull-white: rgba(255,255,255,.6); 
+$font-size: 10px; 
+
+
+
+@mixin font-style{
+  color: $dull-white; 
+  font-size: .7rem;
+  letter-spacing: 2px; 
+}
+
+
+@mixin form-style {
+  background: $dark-black; 
+  margin-bottom: 5px; 
+  border: none; 
+  outline: none; 
+  padding: 10px; 
+  @include font-style; 
+}
+
+
+@mixin horizontal-style {
+  width: 95%;
+  border-bottom: 1px $dull-white;
+}
+
+
+body {
+  font: 100% $font-stack;
+  color: $dull-white; 
+}
+
+div.container{
+
+  header{
+    background: $dark-black;
+    padding: 10px 0;
+    color: $dull-white;
+    text-align: center; 
+  }
+
+  width: 80%; 
+  max-width: 800px; 
+  margin: auto; 
+
+  section{
+    display: flex; 
+    // border: 2px solid red; 
+
+
+    div.view{
+      flex-grow: 2; 
+      background: $light-green; 
+      ul.location{
+        display: flex;
+        list-style: none; 
+      }
+    }
+
+
+    div.form{
+
+      background: $dark-grey; 
+      padding: 10px;
+
+      span{ 
+        padding: 10px 0;
+        @include font-style; 
+      }
+      
+      ul.social-icons{
+
+        margin-top: 10px;  
+        padding: 0; 
+        display: flex; 
+        list-style: none; 
+        justify-content: space-around; 
+        
+        li{
+          margin: 10px 0; 
+          i{
+            color: $dull-white; 
+            // padding: 5px;        
+          }
+        }
+      }
+
+      hr{
+        @include horizontal-style; 
+      }
+
+      form{
+        display: flex; 
+        flex-direction: column;
+        padding: 10px 0; 
+
+        span{ 
+          margin-bottom: 10px;  
+        }
+
+        input, textarea{
+          @include form-style;  
+        }
+
+        button{
+          outline: none; 
+          width: 30%; 
+          border-radius: 0px; 
+          margin-bottom: 10px; 
+          height: 30px; 
+          background: $light-green; 
+          border: none;           
+        }
+
+      }
+
+      .contact{
+        display: flex; 
+        flex-direction: column; 
+        @include font-style; 
+
+        i{
+          font-size: 10px; 
+          margin-bottom: 5px; 
+          &:before{
+            margin-right: 5px; 
+            font-size: 15px; 
+          }
+        }
+        }
+    }
+  }
+}
+
+
+
+
+
+

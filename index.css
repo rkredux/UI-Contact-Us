@@ -1,106 +1,79 @@
-
-$font-stack: Helvetica, sans-serif;
-$light-green: #81c784; 
-$dark-green: #519657; 
-$dark-grey: #424242; 
-$dark-black: #1b1b1b; 
-$dull-white: rgba(255,255,255,.6); 
-
-
-@mixin form-style {
-  background: $dark-black; 
-  color: $dull-white; 
-  margin-bottom: 5px; 
-  border: none; 
-  font-size: 12px; 
-  outline: none; 
-  padding: 10px; 
-  letter-spacing: 1.5px; 
-}
-
-@mixin horizontal-style {
-  width: 90%;
-  border-bottom: 1px $dull-white;
-}
-
-
 body {
-  font: 100% $font-stack;
-  color: $dull-white; 
-}
+  font: 100% Helvetica, sans-serif;
+  color: rgba(255, 255, 255, 0.6); }
 
-
-div.container{
-  header{
-    background: $dark-black;
+div.container {
+  width: 80%;
+  max-width: 800px;
+  margin: auto; }
+  div.container header {
+    background: #1b1b1b;
     padding: 10px 0;
-    color: $dull-white;
-    text-align: center; 
-  }
-  width: 80%; 
-  margin: auto; 
-  section{
-    display: flex; 
-    div.view{
-      background: $light-green; 
-    }
-    .form{
-      background: $dark-grey; 
-      display: flex; 
-      flex-direction: column; 
-      ul.social-icons{
-        padding: 0; 
-        display: flex; 
-        list-style: none; 
-        margin: 0; 
-        justify-content: space-around; 
-        li{
-          margin: 10px 0; 
-          i{
-            color: $dull-white; 
-            padding: 5px;        
-          }
-        }
-      }
-      hr{
-        @include horizontal-style; 
-      }
-      form{
-        display: flex; 
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center; }
+  div.container section {
+    display: flex; }
+    div.container section div.view {
+      flex-grow: 2;
+      background: #81c784; }
+      div.container section div.view ul.location {
+        display: flex;
+        list-style: none; }
+    div.container section div.form {
+      background: #424242;
+      padding: 10px; }
+      div.container section div.form span {
+        padding: 10px 0;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: .7rem;
+        letter-spacing: 2px; }
+      div.container section div.form ul.social-icons {
+        margin-top: 10px;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        justify-content: space-around; }
+        div.container section div.form ul.social-icons li {
+          margin: 10px 0; }
+          div.container section div.form ul.social-icons li i {
+            color: rgba(255, 255, 255, 0.6); }
+      div.container section div.form hr {
+        width: 95%;
+        border-bottom: 1px rgba(255, 255, 255, 0.6); }
+      div.container section div.form form {
+        display: flex;
         flex-direction: column;
-        padding: 0 10px;  
-        span{ 
-          margin: 10px 0; 
-          padding: 5px 0; 
-          color: $dull-white; 
-          font-size: .6rem;
-          letter-spacing: 2px; 
-        }
-        input, textarea{
-          @include form-style;  
-        }
-        button{
-          outline: none; 
-          width: 30%; 
-          border-radius: 0px; 
-          margin-bottom: 10px; 
-          height: 30px; 
-          background: $light-green; 
-          border: none;           
-        }
-      }
-      .contact{
-        display: flex; 
-        flex-direction: column; 
-      }
-    }
-  }
-}
+        padding: 10px 0; }
+        div.container section div.form form span {
+          margin-bottom: 10px; }
+        div.container section div.form form input, div.container section div.form form textarea {
+          background: #1b1b1b;
+          margin-bottom: 5px;
+          border: none;
+          outline: none;
+          padding: 10px;
+          color: rgba(255, 255, 255, 0.6);
+          font-size: .7rem;
+          letter-spacing: 2px; }
+        div.container section div.form form button {
+          outline: none;
+          width: 30%;
+          border-radius: 0px;
+          margin-bottom: 10px;
+          height: 30px;
+          background: #81c784;
+          border: none; }
+      div.container section div.form .contact {
+        display: flex;
+        flex-direction: column;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: .7rem;
+        letter-spacing: 2px; }
+        div.container section div.form .contact i {
+          font-size: 10px;
+          margin-bottom: 5px; }
+          div.container section div.form .contact i:before {
+            margin-right: 5px;
+            font-size: 15px; }
 
-.location{
-  display: flex;
-  list-style: none; 
-}
-
-
-
+/*# sourceMappingURL=index.css.map */
