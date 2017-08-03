@@ -17,15 +17,25 @@ div.container {
       flex-grow: 2;
       background: #81c784; }
       div.container section div.view ul.location {
+        margin: 0;
         display: flex;
-        list-style: none; }
+        list-style: none;
+        padding: 0; }
+        div.container section div.view ul.location li {
+          flex: 1;
+          text-align: center;
+          background: #519657;
+          padding: 14px;
+          border-right: 1px solid rgba(255, 255, 255, 0.6); }
+          div.container section div.view ul.location li:last-child {
+            border-right: 0; }
     div.container section div.form {
       background: #424242;
       padding: 10px; }
       div.container section div.form span {
         padding: 10px 0;
         color: rgba(255, 255, 255, 0.6);
-        font-size: .7rem;
+        font-size: 10px;
         letter-spacing: 2px; }
       div.container section div.form ul.social-icons {
         margin-top: 10px;
@@ -48,12 +58,12 @@ div.container {
           margin-bottom: 10px; }
         div.container section div.form form input, div.container section div.form form textarea {
           background: #1b1b1b;
-          margin-bottom: 5px;
+          margin-bottom: 10px;
           border: none;
           outline: none;
           padding: 10px;
           color: rgba(255, 255, 255, 0.6);
-          font-size: .7rem;
+          font-size: 10px;
           letter-spacing: 2px; }
         div.container section div.form form button {
           outline: none;
@@ -65,15 +75,12 @@ div.container {
           border: none; }
       div.container section div.form .contact {
         display: flex;
-        flex-direction: column;
-        color: rgba(255, 255, 255, 0.6);
-        font-size: .7rem;
-        letter-spacing: 2px; }
+        flex-direction: column; }
         div.container section div.form .contact i {
-          font-size: 10px;
+          font-size: 12px;
           margin-bottom: 5px; }
           div.container section div.form .contact i:before {
             margin-right: 5px;
-            font-size: 15px; }
+            font-size: 14px; }
 
 /*# sourceMappingURL=index.css.map */
