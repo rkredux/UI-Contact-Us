@@ -53,10 +53,14 @@ div.container{
     display: flex; 
 
     div.view{ 
+      // border: 2px solid red;
       flex-grow: 2; 
       background: $light-green;
-
-      ul.location{ 
+      #map{
+        // border: 2px solid black; 
+      }
+      ul.location{
+        // border: 2px solid white;  
         margin: 0; 
         display: flex;
         list-style: none; 
