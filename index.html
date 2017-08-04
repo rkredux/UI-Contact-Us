@@ -15,7 +15,7 @@
       <section>
         
         <div class="view">
-          <div class="map"></div>
+          <div style="width:100%; height:400px;" id="map">My Map Will Come Here</div>
           <ul class="location">
             <li>USA</li>
             <li>INDIA</li>
@@ -29,7 +29,7 @@
           <div class="social">
             <span>CONNECT</span>
             <ul class="social-icons">
-              <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+              <li><i class="fa fa-facebook" aria-hidden="true"></i></li>s
               <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
               <li><i class="fa fa-linkedin" aria-hidden="true"></i></li>
               <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
@@ -60,6 +60,50 @@
       </section>
 
     </div>
+
+   <script>
+
+    function myMap() {
+
+      const address = {
+        USA: "1701, 16th Street NW, Washington DC, 20009, USA",  
+        INDIA: "B1/23, Safdarjung Enclave, New Delhi, 110029, India",  
+        CHINA: "Peking University, Beijing, China", 
+        JAPAN: "Osaka University, Osaka, Japan"
+      }; 
+
+      function getCoordinates(event){
+        // build location string
+        const location = address[event.target.innerText].split(" ").join("+").trim(); 
+
+        // build query string
+        const query = `https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=API_KEY`; 
+
+        // go ahead fetch it
+        fetch(query) 
+          .then((response) => response.json())
+          .then(function (res){
+            return res.results[0].geometry.location; 
+            })
+          .then((res) => {  //build mapOptions object  
+              let mapOptions = {
+                  center: new google.maps.LatLng(res.lat, res.lng),
+                  zoom: 5,
+                  mapTypeId: google.maps.MapTypeId.HYBRID
+              }; 
+              // place the map in the DOM
+              const map = new google.maps.Map(document.getElementById("map"), mapOptions);
+          }); 
+    }; 
+
+      // bind the click event on the locations 
+      document.querySelectorAll("ul.location > li").forEach((elm) => elm.addEventListener("click", getCoordinates)); 
+
+      }
+
+    </script>
+
+   <script async src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=myMap"></script>
 
   </body>
 </html>
