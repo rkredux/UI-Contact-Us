@@ -12,7 +12,8 @@ div.container {
     color: rgba(255, 255, 255, 0.6);
     text-align: center; }
   div.container section {
-    display: flex; }
+    display: flex;
+    flex-wrap: wrap; }
     div.container section div.view {
       flex-grow: 2;
       background: #81c784; }
@@ -29,9 +30,12 @@ div.container {
           border-right: 1px solid rgba(255, 255, 255, 0.6); }
           div.container section div.view ul.location li:last-child {
             border-right: 0; }
+        div.container section div.view ul.location li.highlight {
+          background: #1b1b1b; }
     div.container section div.form {
       background: #424242;
-      padding: 10px; }
+      padding: 10px;
+      flex: 1; }
       div.container section div.form span {
         padding: 10px 0;
         color: rgba(255, 255, 255, 0.6);

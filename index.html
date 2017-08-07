@@ -15,7 +15,7 @@
       <section>
         
         <div class="view">
-          <div style="width:100%; height:400px;" id="map">My Map Will Come Here</div>
+          <div style="height:100%;" id="map">To LOAD THE MAP PLACE YOUR API IN API_KEY AREA</div>
           <ul class="location">
             <li>USA</li>
             <li>INDIA</li>
@@ -29,7 +29,7 @@
           <div class="social">
             <span>CONNECT</span>
             <ul class="social-icons">
-              <li><i class="fa fa-facebook" aria-hidden="true"></i></li>s
+              <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
               <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
               <li><i class="fa fa-linkedin" aria-hidden="true"></i></li>
               <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
@@ -72,8 +72,15 @@
         JAPAN: "Osaka University, Osaka, Japan"
       }; 
 
+
       function getCoordinates(event){
-        // build location string
+
+        // if li element is hightlighted replace
+        // it with the new li element that is active
+
+        // add a class and highlight the in focus li element. 
+
+
         const location = address[event.target.innerText].split(" ").join("+").trim(); 
 
         // build query string
@@ -85,25 +92,30 @@
           .then(function (res){
             return res.results[0].geometry.location; 
             })
-          .then((res) => {  //build mapOptions object  
-              let mapOptions = {
-                  center: new google.maps.LatLng(res.lat, res.lng),
-                  zoom: 5,
-                  mapTypeId: google.maps.MapTypeId.HYBRID
-              }; 
-              // place the map in the DOM
-              const map = new google.maps.Map(document.getElementById("map"), mapOptions);
+          .then((res) => {  //build mapOptions object 
+
+              const myLatLng = {lat: res.lat, lng: res.lng}; 
+
+              const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4, 
+                center: myLatLng
+              }); 
+
+              const marker = new google.maps.Marker({
+                position: myLatLng, 
+                map, 
+                title: "Hello World"
+              }); 
+
           }); 
-    }; 
+      }; 
 
-      // bind the click event on the locations 
       document.querySelectorAll("ul.location > li").forEach((elm) => elm.addEventListener("click", getCoordinates)); 
-
-      }
+    }
 
     </script>
 
-   <script async src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=myMap"></script>
+   <script async src="https://maps.googleapis.com/maps/api/js?key="API_KEY"&callback=myMap"></script>
 
   </body>
 </html>

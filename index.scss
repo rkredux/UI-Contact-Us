@@ -37,7 +37,10 @@ body {
   color: $dull-white; 
 }
 
+
+
 div.container{
+
   width: 80%; 
   max-width: 800px; 
   margin: auto; 
@@ -51,6 +54,8 @@ div.container{
 
   section{
     display: flex; 
+    flex-wrap: wrap; 
+
 
     div.view{ 
       // border: 2px solid red;
@@ -74,7 +79,10 @@ div.container{
         &:last-child{
           border-right: 0; 
         }
-        }   
+        }  
+        li.highlight{
+        background: $dark-black; 
+        } 
       }
 
     }
@@ -83,6 +91,7 @@ div.container{
     div.form{
       background: $dark-grey; 
       padding: 10px;
+      flex: 1; 
 
       span{ 
         padding: 10px 0;
